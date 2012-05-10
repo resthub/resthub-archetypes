@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>org.resthub</groupId>
+	<artifactId>resthub-archetypes</artifactId>
+	<version>2.0-SNAPSHOT</version>
+	<name>RESThub Archetypes</name>
+	<packaging>pom</packaging>
+	<description>Archetypes provided to allow quick bootstraping for your RESThub based projects</description>
+
+	<modules>
+		<module>resthub-archetype-spring-jpa-webservice</module>
+	</modules>
+
+</project>
