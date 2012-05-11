@@ -6,22 +6,22 @@ package ${package}.controller;
 import javax.inject.Inject;
 import javax.inject.Named;
 
-import org.resthub.web.controller.ServiceBasedRestController;
+import org.resthub.web.controller.RepositoryBasedRestController;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import ${package}.model.Sample;
-import ${package}.service.SampleService;
+import ${package}.repository.SampleRepository;
 
 @Controller 
 @RequestMapping(value = "/api/sample")
-public class SampleController extends ServiceBasedRestController<Sample, Long, SampleService> {
+public class SampleController extends RepositoryBasedRestController<Sample, Long, SampleRepository> {
 
     @Inject
-    @Named("sampleService")
+    @Named("sampleRepository")
     @Override
-    public void setService(SampleService service) {
-        this.service = service;
+    public void setRepository(SampleRepository repository) {
+        this.repository = repository;
     }
 
     @Override
