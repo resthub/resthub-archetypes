@@ -9,17 +9,18 @@ import javax.inject.Named;
 import org.resthub.common.util.PostInitialize;
 
 import ${package}.model.Sample;
+import ${package}.repository.SampleRepository;
 
 @Named("sampleInitializer")
 public class SampleInitializer {
 
     @Inject
-    @Named("sampleService")
-    private SampleService sampleService;
+    @Named("sampleRepository")
+    private SampleRepository sampleRepository;
 
     @PostInitialize
     public void init() {
-        Sample s = new Sample("testSample");
-        sampleService.create(s);
+        Sample sample = new Sample("testSample");
+        sampleRepository.save(sample);
     }
 }
