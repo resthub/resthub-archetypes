@@ -3,8 +3,6 @@
 #set( $symbol_escape = '\' )
 package ${package};
 
-import java.util.Set;
-
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.ServletRegistration;
@@ -21,13 +19,14 @@ public class WebAppInitializer implements WebApplicationInitializer {
     public void onStartup(ServletContext servletContext) throws ServletException {
         
         XmlWebApplicationContext appContext = new XmlWebApplicationContext();
+        String[] locations = {"classpath*:resthubContext.xml", "classpath*:applicationContext.xml"};
+        appContext.setConfigLocations(locations);
 
         ServletRegistration.Dynamic dispatcher = servletContext.addServlet("dispatcher", new DispatcherServlet(appContext));
         dispatcher.setLoadOnStartup(1);
         dispatcher.addMapping("/*");
-        
+
         servletContext.addListener(new ContextLoaderListener(appContext));
-        servletContext.setInitParameter("contextConfigLocation", "classpath*:resthubContext.xml classpath*:applicationContext.xml");
 
         //Database Console for managing the app's database (TODO : profile)
         ServletRegistration.Dynamic h2Servlet = servletContext.addServlet("h2console", WebServlet.class);

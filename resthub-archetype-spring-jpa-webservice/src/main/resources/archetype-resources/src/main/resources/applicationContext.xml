@@ -11,9 +11,9 @@
                             http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-3.1.xsd
                             http://www.springframework.org/schema/data/jpa http://www.springframework.org/schema/data/jpa/spring-jpa.xsd">
 
-    <context:component-scan base-package="${package}" />
-    <mvc:annotation-driven />
+    <import resource="classpath*:resthubDefaultWebServerContext.xml" />
     <mvc:default-servlet-handler />
-    <jpa:repositories base-package="${package}.repository" />
 
+    <context:component-scan base-package="${package}" />
+    <jpa:repositories base-package="${package}.repository" />
 </beans>
