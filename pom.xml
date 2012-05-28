@@ -11,8 +11,47 @@
     <description>Archetypes provided to allow quick bootstraping for your RESThub based projects</description>
 
     <modules>
-        <module>resthub-archetype-spring-jpa-webservice</module>
-        <module>resthub-archetype-spring-mongodb-webservice</module>
+        <module>resthub-jpa-webservice-archetype</module>
+        <module>resthub-jpa-backbonejs-archetype</module>
+        <module>resthub-mongodb-backbonejs-archetype</module>
+        <module>resthub-mongodb-webservice-archetype</module>
     </modules>
+    
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-resources-plugin</artifactId>
+                <version>2.5</version>
+                <configuration>
+                    <encoding>UTF-8</encoding>
+                    <escapeString>£</escapeString>
+                </configuration>
+            </plugin>
+        </plugins>
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+                <filtering>true</filtering>
+            </resource>
+        </resources>
+
+        <extensions>
+            <extension>
+                <groupId>org.apache.maven.archetype</groupId>
+                <artifactId>archetype-packaging</artifactId>
+            </extension>
+        </extensions>
+
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-archetype-plugin</artifactId>
+                    <extensions>true</extensions>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+    </build>
 
 </project>
