@@ -11,8 +11,6 @@
 
     <properties>
         <resthub.spring.stack.version>2.0-SNAPSHOT</resthub.spring.stack.version>
-        <resthub.backbone.stack.version>2.0-SNAPSHOT</resthub.backbone.stack.version>
-
         <jetty.version>8.1.3.v20120416</jetty.version>
         <jetty.port>8080</jetty.port>
     </properties>
@@ -37,12 +35,6 @@
             <scope>provided</scope>
         </dependency>
 
-        <dependency>
-            <groupId>org.resthub</groupId>
-            <artifactId>resthub-backbone-stack</artifactId>
-            <version>${resthub.backbone.stack.version}</version>
-            <type>war</type>
-        </dependency>
     </dependencies>
 
     <repositories>

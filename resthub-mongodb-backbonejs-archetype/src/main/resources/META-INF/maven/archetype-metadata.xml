@@ -24,7 +24,10 @@
     <fileSet encoding="UTF-8">
       <directory>src/main/webapp</directory>
       <includes>
-        <include>**/*.js</include>
+        <include>css/**</include>
+        <include>js/**</include>
+        <include>img/**</include>
+        <include>favicon.ico</include>
       </includes>
     </fileSet>
   </fileSets>

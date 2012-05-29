@@ -9,8 +9,7 @@ require.config({
 });
 
 // Load our app module and pass it to our definition function
-require(['jquery', 'router', 'views/samples'] , function($, AppRouter, SamplesView) {   
+require(['jquery', 'router'] , function($, AppRouter) {   
     new AppRouter;
     Backbone.history.start();
-    new SamplesView({el: $("#main")});
 });
