@@ -20,7 +20,8 @@ public class SampleInitializer {
 
     @PostInitialize
     public void init() {
-        Sample sample = new Sample("testSample");
-        sampleRepository.save(sample);
+        sampleRepository.save(new Sample("testSample1"));
+        sampleRepository.save(new Sample("testSample2"));
+        sampleRepository.save(new Sample("testSample3"));
     }
 }

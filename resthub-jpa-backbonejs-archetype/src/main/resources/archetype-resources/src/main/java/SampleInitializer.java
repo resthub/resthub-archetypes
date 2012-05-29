@@ -5,7 +5,9 @@ package ${package};
 
 import javax.inject.Inject;
 import javax.inject.Named;
+
 import org.resthub.common.util.PostInitialize;
+
 import ${package}.model.Sample;
 import ${package}.repository.SampleRepository;
 

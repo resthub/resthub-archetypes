@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import ${package}.model.Sample;
 import ${package}.repository.SampleRepository;
 
-@Controller 
+@Controller
 @RequestMapping(value = "/api/sample")
 public class SampleController extends RepositoryBasedRestController<Sample, String, SampleRepository> {
 
