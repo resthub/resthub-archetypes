@@ -18,7 +18,7 @@
   var parseNumber = function(source) { return source * 1 || 0; };
   
   var strRepeat = function(str, qty, separator){
-    // ~~var — is the fastest available way to convert anything to Integer in javascript.
+    // ~~var пїЅ is the fastest available way to convert anything to Integer in javascript.
     // We'll use it extensively in this lib.
     str += ''; qty = ~~qty;
     for (var repeat = []; qty > 0; repeat[--qty] = str) {}
@@ -466,7 +466,7 @@
     },
 
     slugify: function(str) {
-      var from  = "?абдвг??ийлкмнпо??туцфхщъьысз??",
+      var from  = "?пїЅпїЅпїЅпїЅпїЅ??пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ??пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ??",
           to    = "aaaaaaceeeeeiiiilnooooouuuunczz",
           regex = new RegExp(defaultToWhiteSpace(from), 'g');
 
