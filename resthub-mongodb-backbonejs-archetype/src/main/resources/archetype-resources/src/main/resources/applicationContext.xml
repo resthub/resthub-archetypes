@@ -15,8 +15,8 @@
                            http://www.springframework.org/schema/data/mongo 
                            http://www.springframework.org/schema/data/mongo/spring-mongo.xsd">
 
-    <import resource="classpath*:resthubDefaultWebServerContext.xml" />
-    <mvc:default-servlet-handler />
+    <import resource="classpath*:resthubMongodbContext.xml" />
+    <import resource="classpath*:resthubWebServerContext.xml" />
 
     <context:component-scan base-package="${package}" />
     <mongo:repositories base-package="${package}.repository" />
