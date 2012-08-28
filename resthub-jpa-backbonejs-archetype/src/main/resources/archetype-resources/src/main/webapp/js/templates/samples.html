@@ -1,8 +1,10 @@
 #set( $symbol_pound = '#' )
 #set( $symbol_dollar = '$' )
 #set( $symbol_escape = '\' )
-<% _.each(samples,function(sample,key,list){ %>
 <ul>
-    <li><%= sample.name %></li>
+    {{#each samples}}
+        {{#with this}}
+            <li>{{name}}</li>
+        {{/with}}
+    {{/each}}
 </ul>
-<% }) %>
