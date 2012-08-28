@@ -1,16 +1,24 @@
-define(['backbone', 'views/about', 'views/samples'], function(Backbone, AboutView, SamplesView){
-	var AppRouter = Backbone.Router.extend({
-        routes: {
-            '': 'home',
-            'about': 'about'
+define(['resthub-backbone', 'views/about', 'views/samples', 'backbone-queryparams'], function (Backbone, AboutView, SamplesView) {
+    var AppRouter = Backbone.Router.extend({
+        routes:{
+            '':'home',
+            'home':'home',
+            'about':'about'
         },
-        home: function( ){
-             new SamplesView({el: $('#main')});
+        home:function () {
+            new SamplesView({root:$('#main')});
         },
-        about: function( ){
-            new AboutView({el: $('#main')});
+        about:function () {
+            new AboutView({root:$('#main')});
         }
     });
-    
-    return AppRouter;
+
+    var initialize = function () {
+        new AppRouter;
+        Backbone.history.start();
+
+    };
+    return {
+        initialize:initialize
+    };
 });

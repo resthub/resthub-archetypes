@@ -1,23 +1,26 @@
 define([
-  'underscore',
-  'backbone',
-  'text!templates/about.html'
-  ], function(_, Backbone, templateSource){
-  var AboutView = Backbone.View.extend({
-      
-    // compile template
-    template: _.template(templateSource),
+    'underscore',
+    'resthub-backbone',
+    'text!templates/about.html'
+], function (_, Backbone, templateSource) {
+    var AboutView = Backbone.View.extend({
 
-    initialize: function(option) {
-      _.bindAll(this, 'render');
-      this.el = option.el;
-      this.render();
-    },
+        // compile template
+        template:_.template(templateSource),
 
-    render: function(model) {
-      (this.el).html(this.template());
-    }
+        initialize:function (options) {
+            _.bindAll(this, 'render');
 
-  });
-  return AboutView;
+            this.$root = options.root;
+            this.$root.html(this.$el);
+
+            this.render();
+        },
+
+        render:function () {
+            this.$el.html(this.template());
+        }
+
+    });
+    return AboutView;
 });
