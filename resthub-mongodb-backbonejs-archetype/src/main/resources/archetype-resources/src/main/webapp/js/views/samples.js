@@ -1,24 +1,25 @@
 define([
-  'underscore',
-  'backbone',
-  'collections/samples',
-  'text!templates/samples.html'
-  ], function(_, Backbone, Samples, templateSource){
-  var SamplesView = Backbone.View.extend({
-      
-    // compile template
-    template: _.template(templateSource),
-        
-    initialize: function(option) {
-      _.bindAll(this, 'render');
-      this.el = option.el;
-      Samples.fetch({success: this.render});
-    },
+    'underscore',
+    'resthub-backbone',
+    'collections/samples',
+    'hbs!templates/samples.html',
+    'backbone-paginator'
+], function (_, Backbone, Samples, sampleTemplate) {
+    var SamplesView = Backbone.View.extend({
 
-    render: function(model) {
-      (this.el).html(this.template({samples: model.toJSON()}));
-    }
+        initialize:function (options) {
+            _.bindAll(this, 'render');
 
-  });
-  return SamplesView;
+            this.$root = options.root;
+            this.$root.html(this.$el);
+
+            Samples.fetch({success:this.render});
+        },
+
+        render:function (collection) {
+            this.$el.html(sampleTemplate({samples:collection.toJSON()}));
+        }
+
+    });
+    return SamplesView;
 });
