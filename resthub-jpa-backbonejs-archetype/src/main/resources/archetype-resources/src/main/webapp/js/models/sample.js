@@ -1,4 +1,4 @@
-define(['underscore', 'resthub-backbone'], function(_, Backbone) {
+define(['underscore', 'backbone'], function(_, Backbone) {
   var SampleModel = Backbone.Model.extend({
 
     // Default attributes for the todo.

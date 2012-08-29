@@ -1,4 +1,4 @@
-define(['resthub-backbone', 'backbone-paginator', 'models/sample'], function (Backbone, BackbonePaginator, Sample) {
+define(['backbone', 'backbone-paginator', 'models/sample'], function (Backbone, BackbonePaginator, Sample) {
 
     var SamplesCollection = Backbone.Paginator.requestPager.extend({
 
