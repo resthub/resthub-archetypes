@@ -16,15 +16,12 @@ define(['resthub-backbone', 'backbone-paginator', 'models/sample'], function (Ba
         },
 
         paginator_ui:{
-            perPage:100 // Hardcoded for the moment
+            currentPage:'all'
         },
 
         server_api:{
             'page':function () {
                 return this.currentPage;
-            },
-            'perPage':function () {
-                return this.perPage;
             }
         },
 
