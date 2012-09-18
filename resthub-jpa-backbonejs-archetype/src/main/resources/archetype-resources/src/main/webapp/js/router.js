@@ -1,4 +1,4 @@
-define(['resthub-backbone', 'views/about', 'views/samples', 'backbone-queryparams'], function (Backbone, AboutView, SamplesView) {
+define(['backbone', 'views/about', 'views/samples', 'backbone-queryparams'], function (Backbone, AboutView, SamplesView) {
     var AppRouter = Backbone.Router.extend({
         routes:{
             '':'home',

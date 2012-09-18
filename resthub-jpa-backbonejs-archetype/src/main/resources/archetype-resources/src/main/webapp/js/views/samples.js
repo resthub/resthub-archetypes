@@ -1,6 +1,6 @@
 define([
     'underscore',
-    'resthub-backbone',
+    'backbone',
     'collections/samples',
     'hbs!templates/samples.html',
     'backbone-paginator'

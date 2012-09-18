@@ -1,6 +1,6 @@
 define([
     'underscore',
-    'resthub-backbone',
+    'backbone',
     'text!templates/about.html'
 ], function (_, Backbone, templateSource) {
     var AboutView = Backbone.View.extend({
