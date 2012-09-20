@@ -13,6 +13,7 @@
       <directory>src/main/webapp</directory>
       <includes>
         <include>**/*.html</include>
+        <include>**/*.hbs</include>
       </includes>
     </fileSet>
     <fileSet filtered="true" encoding="UTF-8">
