@@ -1,24 +1,12 @@
-define([
-    'underscore',
-    'resthub-backbone',
-    'text!templates/about.html'
-], function (_, Backbone, templateSource) {
+define([ 'underscore', 'backbone', 'hbs!templates/about'
+], function (_, Backbone, aboutTemplate) {
+    
     var AboutView = Backbone.View.extend({
 
-        // compile template
-        template:_.template(templateSource),
-
-        initialize:function (options) {
+        initialize:function () {
+            this.template = aboutTemplate;
             _.bindAll(this, 'render');
-
-            this.$root = options.root;
-            this.$root.html(this.$el);
-
             this.render();
-        },
-
-        render:function () {
-            this.$el.html(this.template());
         }
 
     });
