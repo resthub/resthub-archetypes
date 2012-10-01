@@ -1,8 +1,8 @@
-define(['backbone', 'views/about', 'views/samples', 'backbone-queryparams'], function (Backbone, AboutView, SamplesView) {
+define(['backbone', 'views/aboutView', 'views/samplesView', 'backbone-queryparams'], function (Backbone, AboutView, SamplesView) {
     var AppRouter = Backbone.Router.extend({
 
         initialize: function() {
-            Backbone.history.start();
+            Backbone.history.start({ pushState: true, root: "/" });
         },
 
         routes:{

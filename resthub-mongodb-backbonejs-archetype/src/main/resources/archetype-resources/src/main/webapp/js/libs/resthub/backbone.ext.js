@@ -26,12 +26,11 @@ define(['underscore', 'backbone-orig', 'pubsub', 'libs/resthub/jquery-event-dest
         strategy: 'replace',
 
         _ensureRoot: function() {
-            var $root = this.root instanceof $ ? this.root : $(this.root);
-            if ($root.length != 1) {
-                throw new Error('Root element "' + $root + '" does not exist or is not unique.');
+            this.$root = this.root instanceof $ ? this.root : $(this.root);
+            if (this.$root.length != 1) {
+                throw new Error('Root element "' + this.$root.selector + '" does not exist or is not unique.');
             }
-            this.root = $root[0];
-            this.$root = $root;
+            this.root = this.$root.first();
         },
 
         _insertRoot: function() {
@@ -64,9 +63,9 @@ define(['underscore', 'backbone-orig', 'pubsub', 'libs/resthub/jquery-event-dest
                     }, this);
                     context = this[key];
                 }
-                if (context && context.toJSON) {
-                    context = context.toJSON();
-                }
+            }
+            if (context && context.toJSON) {
+                context = context.toJSON();
             }
             // Maybe throw an error if the context could not be determined
             // instead of returning {}
