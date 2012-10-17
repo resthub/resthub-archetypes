@@ -1,7 +1,7 @@
 /**
  * Set of generic handlebars helpers
  */
-define(['handlebars', 'underscore.string'], function(Handlebars) {
+define(['handlebars-orig', 'moment', 'underscore-string'], function(Handlebars, moment) {
 
     /**
      * This helper provides a more fluent syntax for inline ifs. i.e. if
@@ -134,7 +134,64 @@ define(['handlebars', 'underscore.string'], function(Handlebars) {
     Handlebars.registerHelper('sprintf', function() {
         return _.str.sprintf.apply(this, arguments);
     });
+    
+    /**
+     * This helper provides modulo support
+     * 
+     * n is the number to test
+     * m is the modulo to test it with
+     * The block is rendered if n % m equals 0,
+     * else block (if provided) is rendered instead
+     *
+     * Usage: class='{{#modulo 10 2}} even {{else}} odd {{/modulo}}'
+     */
+    Handlebars.registerHelper('modulo', function(n, m, block) {
+        if((n % m) == 0) {
+            return block();
+        }
+        else {
+            return block.inverse();
+        }
+    });
+    
+    /**
+     * This helper provides a date formatting tool
+     * 
+	 * date is the date to parse and format
+	 * outputPattern is the pattern used to display the date (optional)
+	 * inputPattern is the pattern used to parse the date (optional)
+	 * lang is the lang used by moment (optional, the specific lang module must be loaded before use)
+	 * 
+     * Usage: <span>{{formatDate myDate "MM/DD/YYYY"}}</span>
+     */
+    Handlebars.registerHelper('formatDate', function(date, outputPattern, inputPattern) {
+        var defaultPattern = 'YYYY-MM-DD HH:mm:ss';
+        var momentDate;
+        
+        if(date) {
+            if((date instanceof Date) || (date instanceof Array)) {
+                momentDate = moment(date);
+            }
+            else if(typeof(date) === 'string') {
+                if(!inputPattern || (typeof(inputPattern) !== 'string')) {
+                    inputPattern = defaultPattern;
+                }
+                momentDate = moment(date, inputPattern);
+            }
+            else {
+                return date;
+            }
+        }
+        else {
+            return "";
+        }
 
+        if(!outputPattern || (typeof(outputPattern) !== 'string')) {
+            outputPattern = defaultPattern;
+        }
+        return momentDate.format(outputPattern);
+    });
+   
     return Handlebars;
 
 });
