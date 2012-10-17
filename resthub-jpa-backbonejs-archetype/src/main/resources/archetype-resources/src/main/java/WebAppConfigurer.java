@@ -3,6 +3,7 @@
 #set( $symbol_escape = '\' )
 package ${package};
 
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.ImportResource;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
@@ -11,5 +12,16 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 @EnableJpaRepositories("${package}.repository")
 @ImportResource({"classpath*:resthubContext.xml", "classpath*:applicationContext.xml"})
 public class WebAppConfigurer {
+
+    /*
+    * Instead of declaring beans with <bean> tags in an applicationContext.xml file,
+    * you can implement methods (annotated @Bean) returning the actual java bean.
+    */
+    /*
+    @Bean(name="helloBean")
+    public HelloWorld helloWorld() {
+        return new HelloWorldImpl();
+    }
+    */
 
 }
