@@ -1,7 +1,7 @@
 define([ 'underscore', 'backbone', 'hbs!templates/about'
 ], function (_, Backbone, aboutTemplate) {
     
-    var AboutView = Backbone.View.extend({
+    var AboutView = Backbone.ResthubView.extend({
 
         initialize:function () {
             // Define view template
