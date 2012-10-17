@@ -1,14 +1,14 @@
 ﻿({
     appDir: "../..",
     baseUrl: "js",
-    dir: "../../../../../build",
+    dir: "../../../../../target/build",
     
     optimizeCss: "standard.keepLines",
     mainConfigFile: "../main.js",
 
     inlineText: true,
     removeCombined: true,
-    fileExclusionRegExp: /^_build/,
+    fileExclusionRegExp: /^build/,
 	
     modules: [
     {
