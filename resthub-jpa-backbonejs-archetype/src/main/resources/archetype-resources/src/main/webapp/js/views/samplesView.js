@@ -1,6 +1,6 @@
 define([ 'underscore', 'backbone', 'collections/samples', 'hbs!templates/samples'
 ], function (_, Backbone, Samples, samplesTemplate) {
-    var SamplesView = Backbone.View.extend({
+    var SamplesView = Backbone.ResthubView.extend({
 
         initialize:function () {
             // Define view template
