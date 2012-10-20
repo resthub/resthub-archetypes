@@ -13,8 +13,10 @@
     <modules>
         <module>resthub-jpa-webservice-archetype</module>
         <module>resthub-jpa-backbonejs-archetype</module>
+        <module>resthub-jpa-backbonejs-multi-archetype</module>
         <module>resthub-mongodb-backbonejs-archetype</module>
         <module>resthub-mongodb-webservice-archetype</module>
+        <module>resthub-mongodb-backbonejs-multi-archetype</module>
     </modules>
 
     <build>
