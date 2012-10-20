@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <artifactId>£${rootArtifactId}</artifactId>
+        <groupId>£${groupId}</groupId>
+        <version>£${version}</version>
+        <relativePath>../pom.xml</relativePath>
+    </parent>
+
+    <name>£${rootArtifactId}-webapp</name>
+    <groupId>£${groupId}</groupId>
+    <artifactId>£${rootArtifactId}-webapp</artifactId>
+    <version>£${version}</version>
+
+    <dependencies>
+        <dependency>
+            <groupId>£${groupId}</groupId>
+            <artifactId>£${rootArtifactId}-core</artifactId>
+            <version>£${version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.resthub</groupId>
+            <artifactId>resthub-jpa</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.resthub</groupId>
+            <artifactId>resthub-web-server</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>javax.servlet-api</artifactId>
+            <scope>provided</scope>
+        </dependency>
+    </dependencies>
+
+    <profiles>
+        <profile>
+            <id>optimize</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>com.github.mcheely</groupId>
+                        <artifactId>requirejs-maven-plugin</artifactId>
+                        <version>1.0.4</version>
+                        <executions>
+                            <execution>
+                                <goals>
+                                    <goal>optimize</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                        <configuration>
+                            <!-- path to optimizer json config file -->
+                            <configFile>${basedir}/src/main/webapp/js/build/build-maven-config.js</configFile>
+                            <!-- optional path to optimizer executable -->
+                            <optimizerFile>${basedir}/src/main/webapp/js/build/r.js</optimizerFile>
+                            <!-- whether or not to process config with maven filters -->
+                            <filterConfig>true</filterConfig>
+                            <!-- Skip requirejs optimization if true -->
+                            <skip>false</skip>
+                        </configuration>
+                    </plugin>
+
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-war-plugin</artifactId>
+                        <version>2.1.1</version>
+                        <configuration>
+                            <warSourceExcludes>js/**,css/**</warSourceExcludes>
+                            <packagingExcludes>%regex[js/libs/(?!require).*],js/templates/**</packagingExcludes>
+                        </configuration>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+    </profiles>
+
+</project>
