@@ -10,7 +10,7 @@
     <packaging>pom</packaging>
 
     <properties>
-        <resthub.spring.stack.version>2.0-SNAPSHOT</resthub.spring.stack.version>
+        <resthub.spring.stack.version>${project.version}</resthub.spring.stack.version>
         <jetty.version>8.1.7.v20120910</jetty.version>
         <jetty.port>8080</jetty.port>
     </properties>
