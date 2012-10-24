@@ -1,10 +1,10 @@
-define(['underscore', 'backbone'], function(_, Backbone) {
-  var SampleModel = Backbone.Model.extend({
+define(['backbone'], function(Backbone) {
+    var SampleModel = Backbone.Model.extend({
 
-    defaults: {
-      name: "empty name"
-    }
+        defaults: {
+            name: "empty name"
+        }
 
-  });
-  return SampleModel;
+    });
+    return SampleModel;
 });
