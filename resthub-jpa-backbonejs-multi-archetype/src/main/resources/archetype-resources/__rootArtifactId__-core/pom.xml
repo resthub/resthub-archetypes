@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <artifactId>£${rootArtifactId}</artifactId>
+        <groupId>£${groupId}</groupId>
+        <version>£${version}</version>
+        <relativePath>../pom.xml</relativePath>
+    </parent>
+
+    <name>£${rootArtifactId}-core</name>
+    <groupId>£${groupId}</groupId>
+    <artifactId>£${rootArtifactId}-core</artifactId>
+    <version>£${version}</version>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.resthub</groupId>
+            <artifactId>resthub-jpa</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.resthub</groupId>
+            <artifactId>resthub-web-server</artifactId>
+        </dependency>      
+
+        <dependency>
+            <groupId>£${groupId}</groupId>
+            <artifactId>£${rootArtifactId}-contract</artifactId>
+            <version>£${version}</version>
+        </dependency>
+    </dependencies>
+
+</project>

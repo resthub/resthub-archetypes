@@ -10,7 +10,7 @@ import javax.servlet.ServletRegistration;
 import org.h2.server.web.WebServlet;
 import org.springframework.web.WebApplicationInitializer;
 import org.springframework.web.context.ContextLoaderListener;
-import org.springframework.web.context.support.AnnotationConfigWebApplicationContext;
+import org.springframework.web.context.support.XmlWebApplicationContext;
 import org.springframework.web.servlet.DispatcherServlet;
 
 /**
@@ -20,11 +20,10 @@ public class WebAppInitializer implements WebApplicationInitializer {
 
     @Override
     public void onStartup(ServletContext servletContext) throws ServletException {
-        AnnotationConfigWebApplicationContext appContext = new AnnotationConfigWebApplicationContext();
+        XmlWebApplicationContext appContext = new XmlWebApplicationContext();
         appContext.getEnvironment().setActiveProfiles("resthub-jpa", "resthub-web-server");
-
-        appContext.scan("${package}");
-        appContext.refresh();
+        String[] locations = { "classpath*:resthubContext.xml", "classpath*:applicationContext.xml" };
+        appContext.setConfigLocations(locations);
 
         ServletRegistration.Dynamic dispatcher = servletContext.addServlet("dispatcher", new DispatcherServlet(appContext));
         dispatcher.setLoadOnStartup(1);
