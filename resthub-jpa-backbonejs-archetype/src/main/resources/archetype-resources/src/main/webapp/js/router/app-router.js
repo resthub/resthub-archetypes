@@ -1,4 +1,6 @@
-define(['backbone', 'view/about-view', 'view/samples-view'], function (Backbone, AboutView, SamplesView) {
+define(['backbone', 'view/about-view', 'view/samples-view'],
+function (Backbone, AboutView, SamplesView) {
+    
     var AppRouter = Backbone.Router.extend({
 
         initialize: function() {
@@ -6,16 +8,16 @@ define(['backbone', 'view/about-view', 'view/samples-view'], function (Backbone,
         },
 
         routes:{
-            '':'home',
-            'home':'home',
-            'about':'about'
+            '': 'home',
+            'home': 'home',
+            'about': 'about'
         },
 
         home:function () {
-            new SamplesView({root:$('#main')});
+            new SamplesView({ root: $('#main') });
         },
         about:function () {
-            new AboutView({root:$('#main')});
+            new AboutView({ root: $('#main') });
         }
         
     });
