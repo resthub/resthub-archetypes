@@ -1,7 +1,7 @@
-define([ 'backbone', 'collection/samples', 'hbs!template/samples' ],
-function (Backbone, Samples, samplesTemplate) {
+define([ 'backbone', 'resthub', 'collection/samples', 'hbs!template/samples' ],
+function (Backbone, Resthub, Samples, samplesTemplate) {
     
-    var SamplesView = Backbone.ResthubView.extend({
+    var SamplesView = Resthub.View.extend({
         
         // Define view template
         template: samplesTemplate,
