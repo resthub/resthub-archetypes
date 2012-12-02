@@ -22,7 +22,7 @@
             <version>${resthub.spring.stack.version}</version>
         </dependency>
 
-        <!-- Optional because only needed for annoatations -->
+        <!-- Optional because only needed for annotations -->
         <dependency>
             <groupId>org.resthub</groupId>
             <artifactId>resthub-mongodb</artifactId>
