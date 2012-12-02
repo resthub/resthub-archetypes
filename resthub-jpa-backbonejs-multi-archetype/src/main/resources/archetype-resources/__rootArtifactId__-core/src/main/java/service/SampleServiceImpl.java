@@ -3,8 +3,24 @@
 #set( $symbol_escape = '\' )
 package ${package}.service;
 
+import org.resthub.common.service.CrudService;
+import org.resthub.common.service.CrudServiceImpl;
+import ${package}.model.Sample;
+import ${package}.repository.SampleRepository;
+
+import javax.inject.Inject;
+import javax.inject.Named;
+
 /**
  * This SampleService implementation could be a RPC based service.
  */
-public class SampleServiceImpl implements SampleService {
+@Named("sampleService")
+public class SampleServiceImpl extends CrudServiceImpl<Sample, Long, SampleRepository> implements SampleService {
+
+    @Inject
+    @Override
+    public void setRepository(SampleRepository repository) {
+        this.repository = repository;
+    }
+
 }

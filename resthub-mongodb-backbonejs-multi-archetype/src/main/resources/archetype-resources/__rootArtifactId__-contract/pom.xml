@@ -15,4 +15,22 @@
     <artifactId>£${rootArtifactId}-contract</artifactId>
     <version>£${version}</version>
 
+    <dependencies>
+        <dependency>
+            <groupId>org.resthub</groupId>
+            <artifactId>resthub-common</artifactId>
+            <version>${resthub.spring.stack.version}</version>
+        </dependency>
+
+        <!-- Optional because only needed for annoatations -->
+        <dependency>
+            <groupId>org.resthub</groupId>
+            <artifactId>resthub-mongodb</artifactId>
+            <version>${resthub.spring.stack.version}</version>
+            <optional>true</optional>
+        </dependency>
+
+
+    </dependencies>
+
 </project>
