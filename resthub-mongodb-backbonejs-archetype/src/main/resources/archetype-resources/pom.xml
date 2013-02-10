@@ -84,13 +84,12 @@
     </build>
 
     <repositories>
-        <!-- Contains all RESThub snasphot artifacts - uncomment to use -->
-        <!--repository>
-            <id>resthub snapshots</id>
-            <url>http://nexus.pullrequest.org/content/repositories/snapshots/</url>
-            <snapshots>
-                <enabled>true</enabled>
-            </snapshots>
-        </repository-->
-    </repositories>
+    <repository>
+        <id>snapshot</id>
+         <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+        <snapshots>
+            <enabled>true</enabled>
+        </snapshots>
+    </repository>
+</repositories>
 </project>
