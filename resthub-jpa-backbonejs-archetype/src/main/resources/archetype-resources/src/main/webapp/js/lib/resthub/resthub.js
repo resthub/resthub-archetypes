@@ -1,3 +1,4 @@
+// RESThub Backbone stack 2.1.0
 define(['underscore', 'backbone', 'jquery', 'lib/resthub/jquery-event-destroyed'], function(_, Backbone, $) {
 
     var Resthub = { };
@@ -606,6 +607,9 @@ define(['underscore', 'backbone', 'jquery', 'lib/resthub/jquery-event-destroyed'
                         var checkboxes = form.find("input[type='checkbox'][name='" + name + "']");
                         if (checkboxes.length > 1) {
                             attributes[name] = [];
+                        }
+                        else if (checkboxes.length === 1) {
+                            attributes[name] = "false";
                         }
                     }
                     if ($this.is(':checked')) {
