@@ -11,7 +11,7 @@ function (Backbone, Resthub, Samples, samplesTemplate) {
             this.collection = new Samples();
             
             // Render the view when the collection is retreived from the server
-            this.collection.on('reset', this.render, this);
+            this.listenTo(this.collection, 'sync', this.render);
             
             // Request unpaginated URL
             this.collection.fetch({ data: { page: 'no'} });
