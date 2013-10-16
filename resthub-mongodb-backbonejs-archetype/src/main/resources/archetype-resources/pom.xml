@@ -15,13 +15,54 @@
         <jetty.port>8080</jetty.port>
     </properties>
 
+    <profiles>
+        <profile>
+            <id>optimize</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>com.github.mcheely</groupId>
+                        <artifactId>requirejs-maven-plugin</artifactId>
+                        <version>1.0.4</version>
+                        <executions>
+                            <execution>
+                                <goals>
+                                    <goal>optimize</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                        <configuration>
+                            <!-- path to optimizer json config file -->
+                            <configFile>£${basedir}/src/main/webapp/js/build/build-maven-config.js</configFile>
+                            <!-- optional path to optimizer executable -->
+                            <optimizerFile>£${basedir}/src/main/webapp/js/build/r.js</optimizerFile>
+                            <!-- whether or not to process config with maven filters -->
+                            <filterConfig>true</filterConfig>
+                            <!-- Skip requirejs optimization if true -->
+                            <skip>false</skip>
+                        </configuration>
+                    </plugin>
+
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-war-plugin</artifactId>
+                        <version>2.3</version>
+                        <configuration>
+                            <warSourceExcludes>js/**,css/**</warSourceExcludes>
+                            <packagingExcludes>%regex[js/libs/(?!require).*],js/templates/**</packagingExcludes>
+                        </configuration>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+    </profiles>
+
     <dependencies>
         <dependency>
             <groupId>org.resthub</groupId>
             <artifactId>resthub-mongodb</artifactId>
             <version>${resthub.spring.stack.version}</version>
         </dependency>
-
         <dependency>
             <groupId>org.resthub</groupId>
             <artifactId>resthub-web-server</artifactId>
@@ -78,6 +119,9 @@
                             <maxIdleTime>60000</maxIdleTime>
                         </connector>
                     </connectors>
+                    <!-- To run the optimized version of the webapp -->
+                    <!-- do a 'mvn package -Poptimize' and uncomment the following line -->
+                    <!--<webAppSourceDirectory>£${basedir}/target/£${project.build.finalName}</webAppSourceDirectory>-->
                 </configuration>
             </plugin>
         </plugins>
