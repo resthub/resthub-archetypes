@@ -79,7 +79,7 @@
                     </connectors>
                     <!-- To run the optimized version of the webapp -->
                     <!-- do a 'mvn package -Poptimize' and uncomment the following line -->
-                    <!-- webAppSourceDirectory>${basedir}/target/${project.build.finalName}</webAppSourceDirectory -->
+                    <!--<webAppSourceDirectory>£${basedir}/target/£${project.build.finalName}</webAppSourceDirectory>-->
                 </configuration>
             </plugin>
         </plugins>

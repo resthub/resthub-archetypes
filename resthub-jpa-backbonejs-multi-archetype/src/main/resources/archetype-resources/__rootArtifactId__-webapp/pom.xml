@@ -46,9 +46,9 @@
                         </executions>
                         <configuration>
                             <!-- path to optimizer json config file -->
-                            <configFile>${basedir}/src/main/webapp/js/build/build-maven-config.js</configFile>
+                            <configFile>£${basedir}/src/main/webapp/js/build/build-maven-config.js</configFile>
                             <!-- optional path to optimizer executable -->
-                            <optimizerFile>${basedir}/src/main/webapp/js/build/r.js</optimizerFile>
+                            <optimizerFile>£${basedir}/src/main/webapp/js/build/r.js</optimizerFile>
                             <!-- whether or not to process config with maven filters -->
                             <filterConfig>true</filterConfig>
                             <!-- Skip requirejs optimization if true -->
