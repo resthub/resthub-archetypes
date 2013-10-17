@@ -15,13 +15,6 @@
         <level value="warn" />
     </logger>
 
-    <logger name="org.hibernate">
-        <level value="warn" />
-    </logger>
-    <logger name="org.hibernate.SQL">
-        <level value="warn" />
-    </logger>
-
     <root level="warn">
         <appender-ref ref="STDOUT" />
     </root>
