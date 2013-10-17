@@ -26,7 +26,7 @@
         <dependency>
             <groupId>£${groupId}</groupId>
             <artifactId>£${rootArtifactId}-contract</artifactId>
-            <version>£${version}</version>
+            <version>£${project.version}</version>
         </dependency>
     </dependencies>
 </project>
