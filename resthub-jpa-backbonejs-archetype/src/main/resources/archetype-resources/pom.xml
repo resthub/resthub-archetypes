@@ -11,6 +11,7 @@
 
     <properties>
         <resthub.spring.stack.version>${project.version}</resthub.spring.stack.version>
+
         <jetty.version>8.1.10.v20130312</jetty.version>
         <jetty.port>8080</jetty.port>
     </properties>
@@ -33,20 +34,16 @@
                         </executions>
                         <configuration>
                             <!-- path to optimizer json config file -->
-                            <configFile>
-                                £${basedir}/src/main/webapp/js/build/build-maven-config.js
-                            </configFile>
+                            <configFile>£${basedir}/src/main/webapp/js/build/build-maven-config.js</configFile>
                             <!-- optional path to optimizer executable -->
-                            <optimizerFile>
-                                £${basedir}/src/main/webapp/js/build/r.js
-                            </optimizerFile>
+                            <optimizerFile>£${basedir}/src/main/webapp/js/build/r.js</optimizerFile>
                             <!-- whether or not to process config with maven filters -->
                             <filterConfig>true</filterConfig>
                             <!-- Skip requirejs optimization if true -->
                             <skip>false</skip>
                         </configuration>
                     </plugin>
-                    
+
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-war-plugin</artifactId>
@@ -67,7 +64,6 @@
             <artifactId>resthub-jpa</artifactId>
             <version>${resthub.spring.stack.version}</version>
         </dependency>
-
         <dependency>
             <groupId>org.resthub</groupId>
             <artifactId>resthub-web-server</artifactId>
@@ -80,7 +76,6 @@
             <version>3.0.1</version>
             <scope>provided</scope>
         </dependency>
-
     </dependencies>
 
     <build>
@@ -111,7 +106,7 @@
                     <failOnMissingWebXml>false</failOnMissingWebXml>
                 </configuration>
             </plugin>
-                        
+
             <plugin>
                 <groupId>org.mortbay.jetty</groupId>
                 <artifactId>jetty-maven-plugin</artifactId>
@@ -126,19 +121,19 @@
                     </connectors>
                     <!-- To run the optimized version of the webapp -->
                     <!-- do a 'mvn package -Poptimize' and uncomment the following line -->
-                    <!-- webAppSourceDirectory>£${basedir}/target/£${project.build.finalName}</webAppSourceDirectory -->
+                    <!--<webAppSourceDirectory>£${basedir}/target/£${project.build.finalName}</webAppSourceDirectory>-->
                 </configuration>
             </plugin>
         </plugins>
     </build>
 
     <repositories>
-    <repository>
-        <id>snapshot</id>
-         <url>https://oss.sonatype.org/content/repositories/snapshots</url>
-        <snapshots>
-            <enabled>true</enabled>
-        </snapshots>
-    </repository>
-</repositories>
+        <repository>
+            <id>snapshot</id>
+            <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+        </repository>
+    </repositories>
 </project>

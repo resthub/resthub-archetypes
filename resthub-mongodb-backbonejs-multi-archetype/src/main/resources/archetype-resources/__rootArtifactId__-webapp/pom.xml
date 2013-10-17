@@ -11,22 +11,8 @@
     </parent>
 
     <name>£${rootArtifactId}-webapp</name>
-    <groupId>£${groupId}</groupId>
     <artifactId>£${rootArtifactId}-webapp</artifactId>
-    <version>£${version}</version>
     <packaging>war</packaging>
-
-    <dependencies>
-        <dependency>
-            <groupId>£${groupId}</groupId>
-            <artifactId>£${rootArtifactId}-core</artifactId>
-            <version>£${version}</version>
-        </dependency>
-        <dependency>
-            <groupId>javax.servlet</groupId>
-            <artifactId>javax.servlet-api</artifactId>
-        </dependency>
-    </dependencies>
 
     <profiles>
         <profile>
@@ -46,9 +32,9 @@
                         </executions>
                         <configuration>
                             <!-- path to optimizer json config file -->
-                            <configFile>${basedir}/src/main/webapp/js/build/build-maven-config.js</configFile>
+                            <configFile>£${basedir}/src/main/webapp/js/build/build-maven-config.js</configFile>
                             <!-- optional path to optimizer executable -->
-                            <optimizerFile>${basedir}/src/main/webapp/js/build/r.js</optimizerFile>
+                            <optimizerFile>£${basedir}/src/main/webapp/js/build/r.js</optimizerFile>
                             <!-- whether or not to process config with maven filters -->
                             <filterConfig>true</filterConfig>
                             <!-- Skip requirejs optimization if true -->
@@ -70,4 +56,16 @@
         </profile>
     </profiles>
 
+    <dependencies>
+        <dependency>
+            <groupId>£${groupId}</groupId>
+            <artifactId>£${rootArtifactId}-core</artifactId>
+            <version>£${project.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>javax.servlet-api</artifactId>
+        </dependency>
+    </dependencies>
 </project>

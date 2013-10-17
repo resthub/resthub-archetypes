@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
     <name>£${artifactId}</name>
@@ -11,9 +11,52 @@
 
     <properties>
         <resthub.spring.stack.version>${project.version}</resthub.spring.stack.version>
+
         <jetty.version>8.1.10.v20130312</jetty.version>
         <jetty.port>8080</jetty.port>
     </properties>
+
+    <profiles>
+        <profile>
+            <id>optimize</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>com.github.mcheely</groupId>
+                        <artifactId>requirejs-maven-plugin</artifactId>
+                        <version>1.0.4</version>
+                        <executions>
+                            <execution>
+                                <goals>
+                                    <goal>optimize</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                        <configuration>
+                            <!-- path to optimizer json config file -->
+                            <configFile>£${basedir}/src/main/webapp/js/build/build-maven-config.js</configFile>
+                            <!-- optional path to optimizer executable -->
+                            <optimizerFile>£${basedir}/src/main/webapp/js/build/r.js</optimizerFile>
+                            <!-- whether or not to process config with maven filters -->
+                            <filterConfig>true</filterConfig>
+                            <!-- Skip requirejs optimization if true -->
+                            <skip>false</skip>
+                        </configuration>
+                    </plugin>
+
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-war-plugin</artifactId>
+                        <version>2.3</version>
+                        <configuration>
+                            <warSourceExcludes>js/**,css/**</warSourceExcludes>
+                            <packagingExcludes>%regex[js/libs/(?!require).*],js/templates/**</packagingExcludes>
+                        </configuration>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+    </profiles>
 
     <dependencies>
         <dependency>
@@ -21,7 +64,6 @@
             <artifactId>resthub-mongodb</artifactId>
             <version>${resthub.spring.stack.version}</version>
         </dependency>
-
         <dependency>
             <groupId>org.resthub</groupId>
             <artifactId>resthub-web-server</artifactId>
@@ -34,7 +76,6 @@
             <version>3.0.1</version>
             <scope>provided</scope>
         </dependency>
-
     </dependencies>
 
     <build>
@@ -78,18 +119,21 @@
                             <maxIdleTime>60000</maxIdleTime>
                         </connector>
                     </connectors>
+                    <!-- To run the optimized version of the webapp -->
+                    <!-- do a 'mvn package -Poptimize' and uncomment the following line -->
+                    <!--<webAppSourceDirectory>£${basedir}/target/£${project.build.finalName}</webAppSourceDirectory>-->
                 </configuration>
             </plugin>
         </plugins>
     </build>
 
     <repositories>
-    <repository>
-        <id>snapshot</id>
-         <url>https://oss.sonatype.org/content/repositories/snapshots</url>
-        <snapshots>
-            <enabled>true</enabled>
-        </snapshots>
-    </repository>
-</repositories>
+        <repository>
+            <id>snapshot</id>
+            <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+        </repository>
+    </repositories>
 </project>
