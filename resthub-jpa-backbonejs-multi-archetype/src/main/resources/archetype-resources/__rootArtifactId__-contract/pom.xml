@@ -11,16 +11,13 @@
     </parent>
 
     <name>£${rootArtifactId}-contract</name>
-    <groupId>£${groupId}</groupId>
     <artifactId>£${rootArtifactId}-contract</artifactId>
-    <version>£${version}</version>
 
     <dependencies>
         <!-- Only used for annotation, so we definie this dependency as optional -->
         <dependency>
             <groupId>org.resthub</groupId>
             <artifactId>resthub-jpa</artifactId>
-            <version>${resthub.spring.stack.version}</version>
             <optional>true</optional>
         </dependency>
     </dependencies>

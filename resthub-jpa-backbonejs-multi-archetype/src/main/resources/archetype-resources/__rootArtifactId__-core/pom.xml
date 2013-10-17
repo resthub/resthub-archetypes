@@ -11,9 +11,7 @@
     </parent>
 
     <name>£${rootArtifactId}-core</name>
-    <groupId>£${groupId}</groupId>
     <artifactId>£${rootArtifactId}-core</artifactId>
-    <version>£${version}</version>
 
     <dependencies>
         <dependency>

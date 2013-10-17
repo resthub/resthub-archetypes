@@ -11,9 +11,7 @@
     </parent>
 
     <name>£${rootArtifactId}-webapp</name>
-    <groupId>£${groupId}</groupId>
     <artifactId>£${rootArtifactId}-webapp</artifactId>
-    <version>£${version}</version>
     <packaging>war</packaging>
 
     <profiles>
