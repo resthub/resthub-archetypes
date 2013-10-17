@@ -15,18 +15,18 @@
 
     <dependencies>
         <dependency>
+            <groupId>£${groupId}</groupId>
+            <artifactId>£${rootArtifactId}-contract</artifactId>
+            <version>£${project.version}</version>
+        </dependency>
+
+        <dependency>
             <groupId>org.resthub</groupId>
             <artifactId>resthub-mongodb</artifactId>
         </dependency>
         <dependency>
             <groupId>org.resthub</groupId>
             <artifactId>resthub-web-server</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>£${groupId}</groupId>
-            <artifactId>£${rootArtifactId}-contract</artifactId>
-            <version>£${project.version}</version>
         </dependency>
     </dependencies>
 </project>
