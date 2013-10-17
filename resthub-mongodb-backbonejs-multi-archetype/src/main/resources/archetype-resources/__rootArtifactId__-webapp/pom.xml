@@ -16,19 +16,6 @@
     <version>£${version}</version>
     <packaging>war</packaging>
 
-    <dependencies>
-        <dependency>
-            <groupId>£${groupId}</groupId>
-            <artifactId>£${rootArtifactId}-core</artifactId>
-            <version>£${version}</version>
-        </dependency>
-
-        <dependency>
-            <groupId>javax.servlet</groupId>
-            <artifactId>javax.servlet-api</artifactId>
-        </dependency>
-    </dependencies>
-
     <profiles>
         <profile>
             <id>optimize</id>
@@ -70,4 +57,17 @@
             </build>
         </profile>
     </profiles>
+
+    <dependencies>
+        <dependency>
+            <groupId>£${groupId}</groupId>
+            <artifactId>£${rootArtifactId}-core</artifactId>
+            <version>£${version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>javax.servlet-api</artifactId>
+        </dependency>
+    </dependencies>
 </project>
