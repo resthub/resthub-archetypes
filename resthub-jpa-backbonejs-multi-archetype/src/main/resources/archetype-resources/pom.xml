@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
     <name>£${artifactId}</name>
-
     <groupId>£${groupId}</groupId>
     <artifactId>£${artifactId}</artifactId>
     <version>£${version}</version>
@@ -11,6 +11,7 @@
 
     <properties>
         <resthub.spring.stack.version>${project.version}</resthub.spring.stack.version>
+
         <jetty.version>8.1.10.v20130312</jetty.version>
         <jetty.port>8080</jetty.port>
     </properties>
@@ -27,6 +28,7 @@
                 <artifactId>resthub-web-server</artifactId>
                 <version>${resthub.spring.stack.version}</version>
             </dependency>
+
             <dependency>
                 <groupId>javax.servlet</groupId>
                 <artifactId>javax.servlet-api</artifactId>
@@ -86,12 +88,12 @@
     </build>
 
     <repositories>
-    <repository>
-        <id>snapshot</id>
-         <url>https://oss.sonatype.org/content/repositories/snapshots</url>
-        <snapshots>
-            <enabled>true</enabled>
-        </snapshots>
-    </repository>
-</repositories>
+        <repository>
+            <id>snapshot</id>
+            <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+        </repository>
+    </repositories>
 </project>

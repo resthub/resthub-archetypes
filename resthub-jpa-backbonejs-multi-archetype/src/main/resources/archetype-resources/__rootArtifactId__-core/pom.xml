@@ -23,7 +23,7 @@
         <dependency>
             <groupId>org.resthub</groupId>
             <artifactId>resthub-web-server</artifactId>
-        </dependency>      
+        </dependency>
 
         <dependency>
             <groupId>£${groupId}</groupId>
@@ -31,5 +31,4 @@
             <version>£${version}</version>
         </dependency>
     </dependencies>
-
 </project>

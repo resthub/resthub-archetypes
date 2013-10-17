@@ -22,6 +22,7 @@
             <artifactId>£${rootArtifactId}-core</artifactId>
             <version>£${version}</version>
         </dependency>
+
         <dependency>
             <groupId>javax.servlet</groupId>
             <artifactId>javax.servlet-api</artifactId>
@@ -69,5 +70,4 @@
             </build>
         </profile>
     </profiles>
-
 </project>
