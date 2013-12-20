@@ -12,7 +12,7 @@
     <properties>
         <resthub.spring.stack.version>${project.version}</resthub.spring.stack.version>
 
-        <jetty.version>8.1.10.v20130312</jetty.version>
+        <jetty.version>8.1.13.v20130916</jetty.version>
         <jetty.port>8080</jetty.port>
     </properties>
 
