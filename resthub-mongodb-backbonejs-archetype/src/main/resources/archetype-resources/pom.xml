@@ -12,7 +12,7 @@
     <properties>
         <resthub.spring.stack.version>${project.version}</resthub.spring.stack.version>
 
-        <jetty.version>9.1.2.v20140210</jetty.version>
+        <maven.jetty.version>9.1.2.v20140210</maven.jetty.version>
         <jetty.port>8080</jetty.port>
     </properties>
 
@@ -108,9 +108,9 @@
             </plugin>
 
             <plugin>
-                <groupId>org.mortbay.jetty</groupId>
+                <groupId>org.eclipse.jetty</groupId>
                 <artifactId>jetty-maven-plugin</artifactId>
-                <version>${jetty.version}</version>
+                <version>${maven.jetty.version}</version>
                 <configuration>
                     <!-- We use non NIO connector in order to avoid read only static files under windows -->
                     <connectors>
