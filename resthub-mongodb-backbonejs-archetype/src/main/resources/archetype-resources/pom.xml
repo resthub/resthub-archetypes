@@ -12,7 +12,7 @@
     <properties>
         <resthub.spring.stack.version>${project.version}</resthub.spring.stack.version>
 
-        <jetty.version>8.1.13.v20130916</jetty.version>
+        <jetty.version>9.1.2.v20140210</jetty.version>
         <jetty.port>8080</jetty.port>
     </properties>
 
@@ -24,7 +24,7 @@
                     <plugin>
                         <groupId>com.github.mcheely</groupId>
                         <artifactId>requirejs-maven-plugin</artifactId>
-                        <version>1.0.4</version>
+                        <version>2.0.0</version>
                         <executions>
                             <execution>
                                 <goals>
@@ -47,7 +47,7 @@
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-war-plugin</artifactId>
-                        <version>2.3</version>
+                        <version>2.4</version>
                         <configuration>
                             <warSourceExcludes>js/**,css/**</warSourceExcludes>
                             <packagingExcludes>%regex[js/libs/(?!require).*],js/templates/**</packagingExcludes>
@@ -73,7 +73,7 @@
         <dependency>
             <groupId>javax.servlet</groupId>
             <artifactId>javax.servlet-api</artifactId>
-            <version>3.0.1</version>
+            <version>3.1.0</version>
             <scope>provided</scope>
         </dependency>
     </dependencies>
@@ -83,7 +83,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
-                <version>2.5.1</version>
+                <version>3.1</version>
                 <configuration>
                     <encoding>UTF-8</encoding>
                     <source>1.7</source>
@@ -101,7 +101,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-war-plugin</artifactId>
-                <version>2.3</version>
+                <version>2.4</version>
                 <configuration>
                     <failOnMissingWebXml>false</failOnMissingWebXml>
                 </configuration>
