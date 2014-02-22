@@ -70,20 +70,6 @@
                 <groupId>org.eclipse.jetty</groupId>
                 <artifactId>jetty-maven-plugin</artifactId>
                 <version>${maven.jetty.version}</version>
-                <configuration>
-                    <!-- We use non NIO connector in order to avoid read only static files under windows -->
-                    <httpConnector>
-                        <connector implementation="org.eclipse.jetty.server.bio.SocketConnector">
-                            <port>${jetty.port}</port>
-                            <maxIdleTime>60000</maxIdleTime>
-                        </connector>
-                    </httpConnector>
-                    <stopPort>8005</stopPort>
-                    <stopKey>jetty-stop</stopKey>
-                    <!-- To run the optimized version of the webapp -->
-                    <!-- do a 'mvn package -Poptimize' and uncomment the following line -->
-                    <!--<webAppSourceDirectory>£${basedir}/target/£${project.build.finalName}</webAppSourceDirectory>-->
-                </configuration>
             </plugin>
         </plugins>
     </build>
