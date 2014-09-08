@@ -11,7 +11,7 @@
 
     <properties>
         <resthub.spring.stack.version>${project.version}</resthub.spring.stack.version>
-        <maven.jetty.version>9.1.2.v20140210</maven.jetty.version>
+        <maven.jetty.version>9.2.2.v20140723</maven.jetty.version>
         <jetty.port>8080</jetty.port>
     </properties>
 
